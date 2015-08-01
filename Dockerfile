@@ -16,4 +16,6 @@ RUN chmod 400 /etc/cassandra/jmxremote.password
 
 RUN sed -i 's/LOCAL_JMX=yes.*$/LOCAL_JMX=no/' /etc/cassandra/cassandra-env.sh
 
+RUN echo "stomp_interface: 172.17.0.33" | sudo tee -a /var/lib/datastax-agent/conf/address.yaml
+
 RUN service datastax-agent start
