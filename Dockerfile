@@ -15,3 +15,5 @@ RUN chown cassandra:cassandra /etc/cassandra/jmxremote.password
 RUN chmod 400 /etc/cassandra/jmxremote.password
 
 RUN sed -i 's/LOCAL_JMX=yes.*$/LOCAL_JMX=no/' /etc/cassandra/cassandra-env.sh
+
+RUN service datastax-agent start
